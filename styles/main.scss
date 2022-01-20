@@ -20,4 +20,15 @@ h1 {
 
 .book__info {
 	background-color: #041562;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 3rem;
+	font-size: 1.5rem;
+	& h3 {
+		margin: 0 1rem;
+	}
+}
+.line::before {
+	content: '|';
 }
