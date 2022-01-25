@@ -21,7 +21,7 @@ h1 {
 .book__info {
 	background-color: #041562;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	align-items: center;
 	padding: 3rem;
 	font-size: 1.5rem;
@@ -31,4 +31,64 @@ h1 {
 }
 .line::before {
 	content: '|';
+}
+
+.shelf {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 3rem;
+	margin: 3% auto;
+	max-width: 1122px;
+	justify-items: center;
+}
+
+.book__card {
+	background-color: #11468f;
+	border-radius: 1.5rem;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 2.5rem 0;
+	width: 29rem;
+	min-height: 25rem;
+
+	& h2 {
+		margin-top: 2rem;
+		font-size: 3rem;
+	}
+
+	& p {
+		font-size: 1.8rem;
+		margin-top: 8rem;
+	}
+
+	& button {
+		cursor: pointer;
+		display: inline-block;
+		font-size: 1.5rem;
+		width: 50%;
+		padding: 1rem 0;
+		margin-top: 4rem;
+		border: none;
+		border-radius: 10px;
+		text-decoration: none;
+		transition: background 250ms ease-in-out, color 350ms ease-in;
+	}
+}
+
+.read {
+	& button {
+		background-color: #91c483;
+		&:hover {
+			background-color: #e5e5e5;
+		}
+	}
+}
+
+.not-read {
+	& button {
+		background-color: #e5e5e5;
+		&:hover {
+			background-color: #91c483;
+		}
+	}
 }

@@ -24,8 +24,9 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -39,5 +40,66 @@ h1 {
 
 .line::before {
   content: '|';
+}
+
+.shelf {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin: 3% auto;
+  max-width: 1122px;
+  justify-items: center;
+}
+
+.book__card {
+  background-color: #11468f;
+  border-radius: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 2.5rem 0;
+  width: 29rem;
+  min-height: 25rem;
+}
+
+.book__card h2 {
+  margin-top: 2rem;
+  font-size: 3rem;
+}
+
+.book__card p {
+  font-size: 1.8rem;
+  margin-top: 8rem;
+}
+
+.book__card button {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.5rem;
+  width: 50%;
+  padding: 1rem 0;
+  margin-top: 4rem;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  -webkit-transition: background 250ms ease-in-out, color 350ms ease-in;
+  transition: background 250ms ease-in-out, color 350ms ease-in;
+}
+
+.read button {
+  background-color: #91c483;
+}
+
+.read button:hover {
+  background-color: #e5e5e5;
+}
+
+.not-read button {
+  background-color: #e5e5e5;
+}
+
+.not-read button:hover {
+  background-color: #91c483;
 }
 /*# sourceMappingURL=main.css.map */
