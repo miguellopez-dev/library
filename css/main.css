@@ -20,7 +20,7 @@ h1 {
 }
 
 .book__info {
-  background-color: #041562;
+  background-color: #11468f;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,14 +53,36 @@ h1 {
   justify-items: center;
 }
 
+@media screen and (max-width: 956px) {
+  .shelf {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .shelf {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
 .book__card {
-  background-color: #11468f;
+  background: -webkit-gradient(linear, right bottom, left top, from(#041562), to(#11468f));
+  background: linear-gradient(right bottom, #041562, #11468f);
   border-radius: 1.5rem;
   text-align: center;
   text-transform: uppercase;
   padding: 2.5rem 0;
   width: 29rem;
   min-height: 25rem;
+}
+
+@media screen and (max-width: 630px) {
+  .book__card {
+    width: 35rem;
+    min-height: 31rem;
+  }
 }
 
 .book__card h2 {

@@ -6,6 +6,18 @@ html {
 	font-size: 62.5%;
 }
 
+@mixin respond-screen-med {
+	@media screen and (max-width: 956px) {
+		@content;
+	}
+}
+
+@mixin respond-screen-sm {
+	@media screen and (max-width: 630px) {
+		@content;
+	}
+}
+
 body {
 	background-color: #e5e5e5;
 	color: #eeeeee;
@@ -19,7 +31,7 @@ h1 {
 }
 
 .book__info {
-	background-color: #041562;
+	background-color: #11468f;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -40,16 +52,26 @@ h1 {
 	margin: 3% auto;
 	max-width: 1122px;
 	justify-items: center;
+	@include respond-screen-med {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@include respond-screen-sm {
+		grid-template-columns: 1fr;
+	}
 }
 
 .book__card {
-	background-color: #11468f;
+	background: linear-gradient(right bottom, #041562, #11468f);
 	border-radius: 1.5rem;
 	text-align: center;
 	text-transform: uppercase;
 	padding: 2.5rem 0;
 	width: 29rem;
 	min-height: 25rem;
+	@include respond-screen-sm {
+		width: 35rem;
+		min-height: 31rem;
+	}
 
 	& h2 {
 		margin-top: 2rem;
