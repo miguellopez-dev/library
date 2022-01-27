@@ -69,7 +69,7 @@ h1 {
 
 .book__card {
   background: -webkit-gradient(linear, right bottom, left top, from(#041562), to(#11468f));
-  background: linear-gradient(right bottom, #041562, #11468f);
+  background: linear-gradient(to left top, #041562, #11468f);
   border-radius: 1.5rem;
   text-align: center;
   text-transform: uppercase;
