@@ -19,8 +19,11 @@ h1 {
   margin: 2rem auto;
 }
 
-.book__info {
+.book__info-bg {
   background-color: #11468f;
+}
+
+.book__info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,6 +33,10 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 1222px;
+  margin: 0 auto;
   padding: 3rem;
   font-size: 1.5rem;
 }
@@ -40,6 +47,11 @@ h1 {
 
 .line::before {
   content: '|';
+}
+
+.add {
+  color: #da1212;
+  font-size: 2.7rem;
 }
 
 .shelf {
