@@ -128,18 +128,20 @@ h1 {
   position: fixed;
   top: 0;
   left: 0;
+  display: none;
 }
 
 .book__pop-card {
-  width: 30%;
-  min-width: 30rem;
   background-color: #11468f;
+  border-radius: 1.5rem;
   position: relative;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   overflow-x: hidden;
+  width: 30%;
+  min-width: 40rem;
 }
 
 .book__pop-info {
@@ -165,7 +167,6 @@ h1 {
 }
 
 .book__pop-info form {
-  border: 1px red solid;
   text-align: center;
 }
 
