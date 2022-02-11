@@ -27,15 +27,19 @@ window.onclick = function (event) {
 
 // User will enter 'Title' 'Author' 'Pages' and whether they have read the book
 const btn = document.getElementById('btn-info');
+let count = 0;
+let bookTitle = 'book' + count;
+
 let submitInfo = function () {
-	let book1 = new Book(
+	bookTitle = new Book(
 		form.title.value,
 		form.author.value,
 		form.pages.value,
 		form.read.checked
 	);
-
-	console.log(book1);
+	addBookToLibrary(bookTitle);
+	+count;
+	console.log(myLibrary);
 };
 
 btn.addEventListener('click', function () {
@@ -52,8 +56,8 @@ function Book(title, author, pages, read) {
 }
 
 // the object will be stored in an array
-function addBookToLibrary() {
-	myLibrary.push(book1);
+function addBookToLibrary(book) {
+	myLibrary.push(book);
 }
 // the information bar will be updated with the details the user entered
 // A card will appear showing the information the user entered
