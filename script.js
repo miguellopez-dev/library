@@ -1,7 +1,16 @@
 const button = document.querySelector('.add');
 let card = document.querySelector('.book__pop');
-let pop = document.querySelector('.book__pop');
+const pop = document.querySelector('.book__pop');
 const form = document.getElementById('book-form');
+let totalBooksHolder = document.querySelectorAll('.book__overall');
+let booksReadHolder = document.querySelector('.book__read');
+let totalPagesHolder = document.querySelector('.book__pages');
+let pagesReadHolder = document.querySelector('.book__pages-read');
+
+let pagesRead = 0;
+let booksRead = 0;
+let totalPages = 0;
+let totalBooks = 0;
 
 let myLibrary = [];
 
@@ -38,8 +47,8 @@ let submitInfo = function () {
 		form.read.checked
 	);
 	addBookToLibrary(bookTitle);
-	+count;
-	console.log(myLibrary);
+	addInformationToDetailBar();
+	++count;
 };
 
 btn.addEventListener('click', function () {
@@ -47,6 +56,7 @@ btn.addEventListener('click', function () {
 	form.reset();
 	close();
 });
+
 // Information entered will be stored in an object
 function Book(title, author, pages, read) {
 	this.title = title;
@@ -60,4 +70,20 @@ function addBookToLibrary(book) {
 	myLibrary.push(book);
 }
 // the information bar will be updated with the details the user entered
+function addInformationToDetailBar() {
+	totalBooks = myLibrary.length;
+	totalBooksHolder.forEach(function (e) {
+		e.innerHTML = totalBooks;
+	});
+	myLibrary.forEach(function (e) {
+		if (e.read) {
+			++booksRead;
+		}
+	});
+	booksReadHolder.innerHTML = booksRead;
+	booksRead = 0;
+}
+
+addInformationToDetailBar();
+
 // A card will appear showing the information the user entered
