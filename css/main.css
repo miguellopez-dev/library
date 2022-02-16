@@ -99,12 +99,12 @@ h1 {
 
 .book__card h2 {
   margin-top: 2rem;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .book__card p {
   font-size: 1.8rem;
-  margin-top: 8rem;
+  margin-top: 3rem;
 }
 
 .book__card button {
@@ -179,11 +179,15 @@ h1 {
 }
 
 .not-read button {
-  background-color: #e5e5e5;
+  background-color: #da1212;
 }
 
 .not-read button:hover {
   background-color: #91c483;
+}
+
+.remove button {
+  background-color: #e5e5e5;
 }
 
 .center {
