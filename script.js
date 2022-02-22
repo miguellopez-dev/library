@@ -120,4 +120,10 @@ function removeBtn(e) {
 	e.target.parentNode.parentNode.parentNode.removeChild(
 		e.target.parentNode.parentNode
 	);
+
+	myLibrary = myLibrary.filter(
+		(item) => e.target.parentNode.parentNode.firstChild.innerHTML !== item.title
+	);
+
+	addInformationToDetailBar();
 }
