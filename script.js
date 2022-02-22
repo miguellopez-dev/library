@@ -6,6 +6,7 @@ let totalBooksHolder = document.querySelectorAll('.book__overall');
 let booksReadHolder = document.querySelector('.book__read');
 let totalPagesHolder = document.querySelector('.book__pages');
 let pagesReadHolder = document.querySelector('.book__pages-read');
+const bookShelf = document.querySelector('.shelf');
 
 let pagesRead = 0;
 let booksRead = 0;
@@ -48,10 +49,11 @@ let submitInfo = function () {
 	);
 	addBookToLibrary(bookTitle);
 	addInformationToDetailBar();
+	makeCard(bookTitle);
 	++count;
 };
 
-btn.addEventListener('click', function () {
+btn.addEventListener('click', () => {
 	submitInfo(form);
 	form.reset();
 	close();
@@ -84,6 +86,38 @@ function addInformationToDetailBar() {
 	booksRead = 0;
 }
 
-addInformationToDetailBar();
-
 // A card will appear showing the information the user entered
+function makeCard(book) {
+	let bookCard = document.createElement('div');
+	let bookTitle = document.createElement('h2');
+	let bookAuthor = document.createElement('p');
+	let isRead = document.createElement('div');
+	let btnRemove = document.createElement('div');
+
+	bookCard.className = 'book__card ' + count;
+	btnRemove.className = 'remove';
+
+	bookTitle.innerHTML = book.title;
+	bookAuthor.innerHTML = book.author;
+	if (book.read) {
+		isRead.className = 'read';
+		isRead.innerHTML = '<button>read</button>';
+	} else {
+		isRead.className = 'not-read';
+		isRead.innerHTML = '<button>Not Read</button>';
+	}
+	btnRemove.innerHTML = '<button>Remove</button>';
+	btnRemove.onclick = removeBtn;
+
+	bookShelf.appendChild(bookCard);
+	bookCard.appendChild(bookTitle);
+	bookCard.appendChild(bookAuthor);
+	bookCard.appendChild(isRead);
+	bookCard.appendChild(btnRemove);
+}
+
+function removeBtn(e) {
+	e.target.parentNode.parentNode.parentNode.removeChild(
+		e.target.parentNode.parentNode
+	);
+}
