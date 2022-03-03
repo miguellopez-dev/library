@@ -84,6 +84,7 @@ h1 {
 	justify-content: space-between;
 	align-items: center;
 	gap: 2rem;
+	box-shadow: 0 0 2px #000000;
 	@include respond-screen-sm {
 		width: 35rem;
 		min-height: 31rem;
@@ -125,12 +126,15 @@ h1 {
 }
 .read {
 	background-color: #91c483;
+
+	&:active,
 	&:hover {
-		background-color: #e5e5e5;
+		background-color: #da1212;
 	}
 }
 .not-read {
 	background-color: #da1212;
+	&:active,
 	&:hover {
 		background-color: #91c483;
 	}

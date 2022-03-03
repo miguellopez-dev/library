@@ -102,6 +102,8 @@ h1 {
       -ms-flex-align: center;
           align-items: center;
   gap: 2rem;
+  -webkit-box-shadow: 0 0 2px #000000;
+          box-shadow: 0 0 2px #000000;
 }
 
 @media screen and (max-width: 630px) {
@@ -154,15 +156,15 @@ h1 {
   background-color: #91c483;
 }
 
-.read:hover {
-  background-color: #e5e5e5;
+.read:active, .read:hover {
+  background-color: #da1212;
 }
 
 .not-read {
   background-color: #da1212;
 }
 
-.not-read:hover {
+.not-read:active, .not-read:hover {
   background-color: #91c483;
 }
 
