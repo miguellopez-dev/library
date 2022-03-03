@@ -91,29 +91,31 @@ function makeCard(book) {
 	let bookCard = document.createElement('div');
 	let bookTitle = document.createElement('h2');
 	let bookAuthor = document.createElement('p');
-	let isRead = document.createElement('div');
-	let btnRemove = document.createElement('div');
+	let buttonHolder = document.createElement('div');
+	let isRead = document.createElement('button');
+	let btnRemove = document.createElement('button');
 
 	bookCard.className = 'book__card ' + count;
+	buttonHolder.className = 'book__button-container';
 	btnRemove.className = 'remove';
 
 	bookTitle.innerHTML = book.title;
 	bookAuthor.innerHTML = book.author;
 	if (book.read) {
-		isRead.className = 'read';
-		isRead.innerHTML = '<button>read</button>';
+		readSwitchOn(isRead);
 	} else {
-		isRead.className = 'not-read';
-		isRead.innerHTML = '<button>Not Read</button>';
+		readSwitchOff(isRead);
 	}
-	btnRemove.innerHTML = '<button>Remove</button>';
+	isRead.onclick = readToggle;
+	btnRemove.innerHTML = 'Remove';
 	btnRemove.onclick = removeBtn;
 
 	bookShelf.appendChild(bookCard);
 	bookCard.appendChild(bookTitle);
 	bookCard.appendChild(bookAuthor);
-	bookCard.appendChild(isRead);
-	bookCard.appendChild(btnRemove);
+	bookCard.appendChild(buttonHolder);
+	buttonHolder.appendChild(isRead);
+	buttonHolder.appendChild(btnRemove);
 }
 
 function removeBtn(e) {
@@ -127,3 +129,34 @@ function removeBtn(e) {
 
 	addInformationToDetailBar();
 }
+
+function readToggle(e) {
+	let selection = myLibrary.find(
+		(element) =>
+			element.title == e.target.parentNode.parentNode.firstChild.innerHTML
+	);
+
+	if (e.target.className == 'read') {
+		readSwitchOff(e.target);
+		selection.read = false;
+	} else {
+		readSwitchOn(e.target);
+		selection.read = true;
+	}
+	addInformationToDetailBar();
+}
+
+function readSwitchOn(e) {
+	e.className = 'read';
+	e.innerHTML = 'read';
+}
+
+function readSwitchOff(e) {
+	e.className = 'not-read';
+	e.innerHTML = 'not read';
+}
+
+//READ - not-read button is pressed
+// Button should change color and text to opposite state
+// Information should be updated in book object
+// information should be updated in info bar
