@@ -1,10 +1,10 @@
 const button = document.querySelector('.add');
-let card = document.querySelector('.book__pop');
+const card = document.querySelector('.book__pop');
 const pop = document.querySelector('.book__pop');
 const form = document.getElementById('book-form');
 let totalBooksHolder = document.querySelectorAll('.book__overall');
 let booksReadHolder = document.querySelector('.book__read');
-let totalPagesHolder = document.querySelector('.book__pages');
+let totalPagesHolder = document.querySelectorAll('.book__pages');
 let pagesReadHolder = document.querySelector('.book__pages-read');
 const bookShelf = document.querySelector('.shelf');
 
@@ -36,7 +36,6 @@ window.onclick = function (event) {
 };
 
 // User will enter 'Title' 'Author' 'Pages' and whether they have read the book
-const btn = document.getElementById('btn-info');
 let count = 0;
 let bookTitle = 'book' + count;
 
@@ -53,17 +52,19 @@ let submitInfo = function () {
 	++count;
 };
 
-btn.addEventListener('click', () => {
+const bookAdd = (e) => {
+	e.preventDefault();
 	submitInfo(form);
 	form.reset();
 	close();
-});
+};
+form.onsubmit = bookAdd;
 
 // Information entered will be stored in an object
 function Book(title, author, pages, read) {
 	this.title = title;
 	this.author = author;
-	this.pages = pages;
+	this.pages = parseInt(pages);
 	this.read = read;
 }
 
@@ -84,6 +85,14 @@ function addInformationToDetailBar() {
 	});
 	booksReadHolder.innerHTML = booksRead;
 	booksRead = 0;
+
+	myLibrary.forEach((e) => {
+		totalPages += e.pages;
+	});
+	totalPagesHolder.forEach((e) => {
+		e.innerHTML = totalPages;
+	});
+	totalPages = 0;
 }
 
 // A card will appear showing the information the user entered
@@ -155,8 +164,3 @@ function readSwitchOff(e) {
 	e.className = 'not-read';
 	e.innerHTML = 'not read';
 }
-
-//READ - not-read button is pressed
-// Button should change color and text to opposite state
-// Information should be updated in book object
-// information should be updated in info bar
