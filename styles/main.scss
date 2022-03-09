@@ -201,6 +201,17 @@ h1 {
 	}
 }
 
+#btn-info {
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	width: 100%;
+	background-color: #eeeeee;
+	&:hover {
+		background-color: #91c483;
+	}
+}
+
 .center {
 	position: relative;
 }
