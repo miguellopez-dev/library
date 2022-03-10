@@ -90,14 +90,14 @@ h1 {
   justify-items: center;
 }
 
-@media screen and (max-width: 956px) {
+@media screen and (max-width: 1215px) {
   .shelf {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 810px) {
   .shelf {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -111,7 +111,7 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   padding: 4rem 0;
-  width: 30rem;
+  width: 36rem;
   min-height: 25rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -131,7 +131,7 @@ h1 {
           box-shadow: 0 0 2px #000000;
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 810px) {
   .book__card {
     width: 35rem;
     min-height: 31rem;
@@ -155,9 +155,6 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   width: 50%;
 }
 
