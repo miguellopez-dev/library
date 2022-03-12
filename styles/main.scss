@@ -150,7 +150,7 @@ div[class^='book__stats-info-'] {
 		cursor: pointer;
 		display: inline-block;
 		font-size: 1.5rem;
-
+		color: #000000;
 		padding: 1rem 0;
 		border: none;
 		border-radius: 10px;
@@ -167,14 +167,13 @@ div[class^='book__stats-info-'] {
 .read {
 	background-color: #91c483;
 
-	&:active,
 	&:hover {
 		background-color: #da1212;
 	}
 }
 .not-read {
 	background-color: #da1212;
-	&:active,
+
 	&:hover {
 		background-color: #91c483;
 	}
