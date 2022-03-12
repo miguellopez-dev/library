@@ -150,7 +150,8 @@ function removeBtn(e) {
 function readToggle(e) {
 	let selection = myLibrary.find(
 		(element) =>
-			element.title == e.target.parentNode.parentNode.firstChild.innerHTML
+			element.title ==
+			e.target.parentNode.parentNode.firstChild.firstChild.innerHTML
 	);
 
 	if (e.target.className == 'read') {
