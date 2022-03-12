@@ -98,18 +98,22 @@ function addInformationToDetailBar() {
 // A card will appear showing the information the user entered
 function makeCard(book) {
 	let bookCard = document.createElement('div');
+	let bookInfo = document.createElement('div');
 	let bookTitle = document.createElement('h2');
 	let bookAuthor = document.createElement('p');
+	let pagesRead = document.createElement('p');
 	let buttonHolder = document.createElement('div');
 	let isRead = document.createElement('button');
 	let btnRemove = document.createElement('button');
 
 	bookCard.className = 'book__card ' + count;
+	bookInfo.className = 'book__card-info';
 	buttonHolder.className = 'book__button-container';
 	btnRemove.className = 'remove';
 
 	bookTitle.innerHTML = book.title;
 	bookAuthor.innerHTML = book.author;
+	pagesRead.innerHTML = book.pages;
 	if (book.read) {
 		readSwitchOn(isRead);
 	} else {
@@ -120,8 +124,12 @@ function makeCard(book) {
 	btnRemove.onclick = removeBtn;
 
 	bookShelf.appendChild(bookCard);
-	bookCard.appendChild(bookTitle);
-	bookCard.appendChild(bookAuthor);
+	bookCard.appendChild(bookInfo);
+
+	bookInfo.appendChild(bookTitle);
+	bookInfo.appendChild(bookAuthor);
+	bookInfo.appendChild(pagesRead);
+
 	bookCard.appendChild(buttonHolder);
 	buttonHolder.appendChild(isRead);
 	buttonHolder.appendChild(btnRemove);

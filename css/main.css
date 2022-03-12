@@ -175,6 +175,20 @@ div[class^='book__stats-info-'] {
   font-size: 1.8rem;
 }
 
+.book__card-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 60%;
+}
+
 .book__button-container {
   display: -webkit-box;
   display: -ms-flexbox;

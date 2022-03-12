@@ -132,6 +132,13 @@ div[class^='book__stats-info-'] {
 	}
 }
 
+.book__card-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 60%;
+}
+
 .book__button-container {
 	display: flex;
 	gap: 2rem;
