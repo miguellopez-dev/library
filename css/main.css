@@ -222,16 +222,8 @@ div[class^='book__stats-info-'] {
   background-color: #91c483;
 }
 
-.read:hover {
-  background-color: #da1212;
-}
-
 .not-read {
   background-color: #da1212;
-}
-
-.not-read:hover {
-  background-color: #91c483;
 }
 
 .book__pop {
@@ -267,8 +259,9 @@ div[class^='book__stats-info-'] {
 }
 
 .book__pop-info input {
+  width: 70%;
   display: block;
-  padding: 1.3rem;
+  padding: 1.5rem;
   font-size: 1.5rem;
   margin: 2rem auto;
 }
@@ -289,6 +282,10 @@ div[class^='book__stats-info-'] {
   border-radius: 5px;
   width: 100%;
   background-color: #eeeeee;
+  color: #000000;
+  padding: 1.5rem 0;
+  font-size: 2rem;
+  text-decoration: none;
 }
 
 #btn-info:hover {
@@ -297,5 +294,21 @@ div[class^='book__stats-info-'] {
 
 .center {
   position: relative;
+}
+
+@media (hover: hover) {
+  .read:hover {
+    background-color: #da1212;
+  }
+  .not-read:hover {
+    background-color: #91c483;
+  }
+}
+
+@media (hover: none) {
+  .read:active,
+  .not-read:active {
+    color: inherit;
+  }
 }
 /*# sourceMappingURL=main.css.map */
