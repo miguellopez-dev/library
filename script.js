@@ -141,7 +141,9 @@ function removeBtn(e) {
 	);
 
 	myLibrary = myLibrary.filter(
-		(item) => e.target.parentNode.parentNode.firstChild.innerHTML !== item.title
+		(item) =>
+			e.target.parentNode.parentNode.firstChild.firstChild.innerHTML !==
+			item.title
 	);
 
 	addInformationToDetailBar();
