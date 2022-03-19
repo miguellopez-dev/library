@@ -4,6 +4,18 @@
 }
 html {
 	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+button,
+fieldset,
+input,
+legend,
+select,
+textarea {
+	appearance: none;
+	border: none;
+	background-color: #eeeeee;
 }
 
 @mixin respond-screen-med {
@@ -217,19 +229,67 @@ div[class^='book__stats-info-'] {
 	}
 }
 
-#btn-info {
+.book__info-read {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-top: 25px;
+
+	&-slider {
+		position: relative;
+		display: inline-block;
+		width: 5rem;
+		height: 2.5rem;
+		background-color: #eeeeee;
+		border-radius: 2rem;
+		cursor: pointer;
+
+		&:before {
+			content: '';
+			position: absolute;
+			width: 2rem;
+			height: 2.5rem;
+			border-radius: 50%;
+			background-color: #eeeeee;
+			box-shadow: 0 0 5px #000000;
+			left: 1px;
+			bottom: 0;
+			transition: all 0.3s;
+		}
+	}
+
+	&-checked:checked + &-slider:before {
+		left: 30px;
+	}
+
+	&-checked:checked + &-slider {
+		background-color: #91c483;
+	}
+
+	&-checked:focus + &-slider {
+		box-shadow: 0 0 3px hsl(236, 72%, 79%);
+	}
+
+	&-checked {
+		position: absolute;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+		clip: rect(1px, 1px, 1px, 1px);
+		clip: rect(1px 1px 1px 1px);
+	}
+}
+
+input[type='submit'] {
 	cursor: pointer;
 	border: none;
 	border-radius: 5px;
 	width: 100%;
 	background-color: #eeeeee;
 	color: #000000;
-	padding: 1.5rem 0;
+	padding: 1rem 0;
 	font-size: 2rem;
 	text-decoration: none;
-	&:hover {
-		background-color: #91c483;
-	}
 }
 
 .center {
@@ -243,11 +303,16 @@ div[class^='book__stats-info-'] {
 	.not-read:hover {
 		background-color: #91c483;
 	}
+
+	input[type='submit']:hover {
+		background-color: #91c483;
+	}
 }
 
 @media (hover: none) {
 	.read:active,
-	.not-read:active {
+	.not-read:active,
+	input[type='submit']:active {
 		color: inherit;
 	}
 }

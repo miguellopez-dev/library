@@ -5,6 +5,21 @@
 
 html {
   font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+button,
+fieldset,
+input,
+legend,
+select,
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background-color: #eeeeee;
 }
 
 body {
@@ -276,20 +291,76 @@ div[class^='book__stats-info-'] {
   text-align: center;
 }
 
-#btn-info {
+.book__info-read {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-top: 25px;
+}
+
+.book__info-read-slider {
+  position: relative;
+  display: inline-block;
+  width: 5rem;
+  height: 2.5rem;
+  background-color: #eeeeee;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.book__info-read-slider:before {
+  content: '';
+  position: absolute;
+  width: 2rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #eeeeee;
+  -webkit-box-shadow: 0 0 5px #000000;
+          box-shadow: 0 0 5px #000000;
+  left: 1px;
+  bottom: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.book__info-read-checked:checked + .book__info-read-slider:before {
+  left: 30px;
+}
+
+.book__info-read-checked:checked + .book__info-read-slider {
+  background-color: #91c483;
+}
+
+.book__info-read-checked:focus + .book__info-read-slider {
+  -webkit-box-shadow: 0 0 3px #a3a8f0;
+          box-shadow: 0 0 3px #a3a8f0;
+}
+
+.book__info-read-checked {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip: rect(1px 1px 1px 1px);
+}
+
+input[type='submit'] {
   cursor: pointer;
   border: none;
   border-radius: 5px;
   width: 100%;
   background-color: #eeeeee;
   color: #000000;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   font-size: 2rem;
   text-decoration: none;
-}
-
-#btn-info:hover {
-  background-color: #91c483;
 }
 
 .center {
@@ -303,11 +374,15 @@ div[class^='book__stats-info-'] {
   .not-read:hover {
     background-color: #91c483;
   }
+  input[type='submit']:hover {
+    background-color: #91c483;
+  }
 }
 
 @media (hover: none) {
   .read:active,
-  .not-read:active {
+  .not-read:active,
+  input[type='submit']:active {
     color: inherit;
   }
 }
