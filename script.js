@@ -40,16 +40,23 @@ let count = 0;
 let bookTitle = 'book' + count;
 
 let submitInfo = function () {
-	bookTitle = new Book(
-		form.title.value,
-		form.author.value,
-		form.pages.value,
-		form.read.checked
-	);
-	addBookToLibrary(bookTitle);
-	addInformationToDetailBar();
-	makeCard(bookTitle);
-	++count;
+	if (
+		myLibrary.find((u) => u.title == form.title.value) &&
+		myLibrary.find((u) => u.author == form.author.value)
+	) {
+		alert('This book has already been put into your library');
+	} else {
+		bookTitle = new Book(
+			form.title.value,
+			form.author.value,
+			form.pages.value,
+			form.read.checked
+		);
+		addBookToLibrary(bookTitle);
+		addInformationToDetailBar();
+		makeCard(bookTitle);
+		++count;
+	}
 };
 
 const bookAdd = (e) => {
