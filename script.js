@@ -1,3 +1,4 @@
+// Variables
 const button = document.querySelector('.add');
 const card = document.querySelector('.book__pop');
 const pop = document.querySelector('.book__pop');
@@ -5,13 +6,14 @@ const form = document.getElementById('book-form');
 let totalBooksHolder = document.querySelectorAll('.book__overall');
 let booksReadHolder = document.querySelector('.book__read');
 let totalPagesHolder = document.querySelectorAll('.book__pages');
-let pagesReadHolder = document.querySelector('.book__pages-read');
 const bookShelf = document.querySelector('.shelf');
 
-let pagesRead = 0;
 let booksRead = 0;
 let totalPages = 0;
 let totalBooks = 0;
+
+let count = 0;
+let bookTitle = 'book' + count;
 
 let myLibrary = [];
 
@@ -36,8 +38,6 @@ window.onclick = function (event) {
 };
 
 // User will enter 'Title' 'Author' 'Pages' and whether they have read the book
-let count = 0;
-let bookTitle = 'book' + count;
 
 let submitInfo = function () {
 	if (
