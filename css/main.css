@@ -90,7 +90,7 @@ div[class^='book__stats-info-'] {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 1.5rem;
+  line-height: 3rem;
 }
 
 .add {
