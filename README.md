@@ -1,6 +1,6 @@
 # Library
 
-![Library app screenshot](./Screenshot-Library-app.pngScreenshot-Library-app.png)
+![Library app screenshot](./Screenshot-Library-app.png)
 
 ## Objective
 
